@@ -200,3 +200,60 @@ class Vendedor extends Funcionario {
         return total;
     }
 }
+--EXPLICANDO O CÓDIGO--
+Classe FolhaDePagamento
+
+Esta classe contém métodos para calcular diferentes aspectos da folha de pagamento.
+
+Método totalPago(List<Funcionario> funcionarios): Calcula o total pago a todos os funcionários somando seus salários e benefícios. Itera sobre a lista de funcionários e adiciona os valores, retornando o total.
+
+Métodos totalSalario(List<Funcionario> funcionarios) e totalBeneficios(List<Funcionario> funcionarios): Calculam, respectivamente, o total de salários e o total de benefícios, iterando da mesma forma que totalPago.
+
+Método funcionarioComMaiorSalario(List<Funcionario> funcionarios): Encontra o funcionário com o maior salário, incluindo benefícios, comparando o total de cada funcionário.
+
+
+Classe Funcionario
+
+Essa classe é uma classe abstrata que serve como base para outros tipos de funcionários.
+
+Atributos: Contém informações básicas como nome, cargo, salário base e anos de serviço.
+
+Construtor: Inicializa um funcionário com os dados fornecidos.
+
+Métodos Abstratos: Define calcularSalario() e calcularBeneficios(), que devem ser implementados pelas subclasses.
+
+
+Classe Gerente
+
+Representa um gerente e estende Funcionario.
+
+Construtor: Define um salário base fixo e um cargo de "Gerente".
+
+Método calcularSalario(): Calcula o salário adicionando um bônus por anos de serviço.
+
+Método calcularBeneficios(): Retorna 0, pois gerentes não têm benefícios definidos.
+
+
+Classe Secretario
+
+Outra extensão de Funcionario, representando um secretário.
+
+Construtor e Métodos: Similar ao Gerente, mas implementa cálculos diferentes para salário e benefícios.
+
+
+Classe Vendedor
+
+Representa um vendedor e também estende Funcionario.
+
+Atributos: Inclui um array para armazenar as vendas realizadas.
+
+Construtor e Métodos: Implementa métodos de calcular salário e benefícios, considerando uma comissão sobre as vendas realizadas.
+
+
+Classe Main
+
+Serve como ponto de entrada do programa.
+
+Inicialização: Cria uma lista de funcionários e adiciona instâncias de Secretario, Vendedor e Gerente.
+
+Cálculos: Chama métodos da classe FolhaDePagamento para calcular totais e imprime os resultados.
